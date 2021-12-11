@@ -43,6 +43,29 @@ qc.print(result);
 setTimeout(applyNot, 3000);
 				</pre>
 				</code>
+				<h4>Hadamard (had) gate</h4>
+				<p>
+			  	Hadamard creates a uniform superposition where each outcome |0> or |1> are 
+					equally likely. 
+				</p>
+				<code>
+					<pre>
+applyHad = () => {
+    qc.had();
+    setTimeout(applyHad, 3000);
+};
+
+qc.reset(1);
+qc.write(0);
+const result = qc.read();
+
+qc.print(result);
+setTimeout(applyHad, 3000);
+
+					</pre>
+				</code>
+
+
 	  
 				
   </body>
