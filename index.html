@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Quantum Computer Programming</title>
+	</head>
+	<body>
+		<h1>Quantum Computer Programming</h1>
+		<h2>JavaScript</h2>
+		<p>Code in this section is written in JavaScript for the
+		<a href="https://oreilly-qc.github.io" target="_blank">
+			Oreilly Quantum Computer Simulator
+		</a>
+		</p>
+		<h3>Basic Operations/Gates</h3>
+			<h4>Not</h4>
+				<p>
+				Initialze one qbit to zero and print. Wait 3 seconds and appl the not gate and
+				print. 0 to 1. Wait 3 seconds more and apply the not gate again and print.
+				1 to 0
+				</p>
+				<code>
+				<pre>
+applyNot = () => {
+    qc.not();
+    const result = qc.read();
+    qc.print(result);
+    setTimeout(applyNot, 3000);
+};
+
+//initialize one qbit
+qc.reset(1);
+
+//assign it value of 0
+qc.write(0);
+
+//read the qbit and store result
+const result = qc.read();
+
+//print the result
+qc.print(result);
+
+//apply the not gate recursivley
+setTimeout(applyNot, 3000);
+				</pre>
+				</code>
+	  
+				
+  </body>
+</html>
