@@ -47,25 +47,17 @@ setTimeout(applyNot, 3000);
 				<p>
 			  	Hadamard creates a uniform superposition where each outcome |0> or |1> is
 					equally likely. Here we are applying had to |0> to create a superposition.
-					Next we apply had to the qbit in superpositon, which results in |0>
 				</p>
 				<code>
 					<pre>
-let hasRun = false;
-applyHad = () => {
-    qc.had();
-    if (!hasRun) {
-        hasRun = true;
-        //hadamard applied to existing superposition
-        setTimeout(applyHad, 3000);
-    }
-};
-
-//hadamard applied to initial state of |0>
+//initialize one qbit
 qc.reset(1);
+
+//assign qbit to |0>
 qc.write(0);
-const result = qc.read();
-setTimeout(applyHad, 3000);
+
+//wait 3 seconds and then apply hadamard
+setTimeout(() => {qc.had()}, 3000);	
 					</pre>
 				</code>
 
