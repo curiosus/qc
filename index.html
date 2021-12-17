@@ -80,6 +80,25 @@ setTimeout(() => {qc.had();setTimeout(() => {qc.had()},3000);}, 3000);
 				</pre>
 				</code>
 
+				<p>
+				Apply hadamard to qbit in |1> state to put it in superposition. Apply hadamard
+				to the superposition. Notice relative phase rotates 180 degrees in superposition.
+				</p>
+				<pre>
+				<code>
+//initialize one qbit
+qc.reset(1);
+
+//assign qbit value of |1>
+qc.write(1);
+
+//wait 3 seconds, put in superposition, wait 3 more seconds and 
+//apply hadamard to superposition
+
+setTimeout(()=>{qc.had(); setTimeout(()=>{qc.had()}, 3000)},3000);					
+				</code>
+				</pre>
+
 
 	  
 				
