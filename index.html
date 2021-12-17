@@ -98,6 +98,27 @@ qc.write(1);
 setTimeout(()=>{qc.had(); setTimeout(()=>{qc.had()}, 3000)},3000);					
 				</code>
 				</pre>
+				<p>
+				Quantum Random Number Generator<br/>
+				Using hadamard and read.
+				</p>
+				<pre>
+				<code>
+
+let v = -1;
+qc.reset(1);
+qc.write(0);
+setTimeout(() => {
+    qc.had();
+    setTimeout(()=> {
+        v = qc.read();
+        qc.print(v);
+        qc.print('\n');
+    },3000);
+},3000);
+
+				</code>
+				</pre>
 
 
 	  
