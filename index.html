@@ -120,6 +120,26 @@ setTimeout(() => {
 				</code>
 				</pre>
 
+				<h4>Phase</h4>
+				<p>
+					Phase allows us to manipulate the relative phase of the qbit.
+					phase(45) will set the relative phase of a |1> qbit to 45 degrees counter-clockwise.
+					Phase applied to a |0> qbit will have no effect
+				</p>
+				<pre>
+				<code>
+//initialize a single qbit
+qc.reset(1);
+
+//assign qbit value of 1 (phase has no effect on a |0> qbit
+qc.write(1);
+
+//wait 3 seconds and apply phase
+setTimeout(() => {qc.phase(90)}, 3000);
+				</code>
+				</pre>
+
+
 
 	  
 				
