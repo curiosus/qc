@@ -139,6 +139,34 @@ setTimeout(() => {qc.phase(90)}, 3000);
 				</code>
 				</pre>
 
+				<h4>Using had and phase to create 4 common qbit states</h4>
+				<p>
+					These four states are som commonly used that they have been given the following names:
+					<ul>
+						<li>|+></li>
+						<li>|-></li>
+						<li>|+Y></li>
+						<li>|-Y></li>
+					</ul>
+				</p>
+				<pre>
+				<code>
+qc.reset(1);
+//create the |+> state
+setTimeout(() => {qc.had();
+    //create the |-> state
+    setTimeout(() => {qc.phase(180);
+        //create the |+Y> state
+        setTimeout(() => {qc.phase(-90);
+            //create the |-Y> state
+            setTimeout(() => {qc.phase(-180)}, 3000);
+        }, 3000);
+    }, 3000);
+}, 3000);
+
+				</code>
+				</pre>
+
 
 
 	  
