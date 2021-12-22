@@ -166,10 +166,85 @@ setTimeout(() => {qc.had();
 
 				</code>
 				</pre>
+				<h4>Rotx Roty</h4>
+				<p>
+					rotx(theta) and roty(theta) applied to qbit in |0> and |1>
+				</p>
+				<code>
+			  <pre>
+//init a single qbit
+qc.reset(1);
 
+//set value to |0>
+qc.write(0);
+
+//rotate 45 degrees
+setTimeout(() => {qc.rotx(45)}, 3000);
+
+
+//init a single qbit
+qc.reset(1);
+
+//set value to |1>
+qc.write(1);
+
+//rotate 45 degrees
+setTimeout(() => {qc.rotx(45)}, 3000);
+
+
+//init a single qbit
+qc.reset(1);
+
+//set value to |0>
+qc.write(0);
+
+//rotate 45 degrees
+setTimeout(() => {qc.roty(45)}, 3000);
+
+//init a single qbit
+qc.reset(1);
+
+//set value to |1>
+qc.write(1);
+
+//rotate 45 degrees
+setTimeout(() => {qc.roty(45)}, 3000);
+				</pre>
+				</code>
+				<h4>Combining QPU operations</h4>
+				<p>
+				Combining had() phase(180) had() = a not()
+				</p>
+				<code>
+				<pre>
+//not gate produced from had() phase(180) had()
+
+qc.reset(1);
+qc.write(1);
+setTimeout(() => {qc.had(); qc.phase(180); qc.had();}, 3000);
+				</pre>
+				</code>
+
+				<p>
+				Combining had() not() had() = phase(180)
+				</p>
+				<code>
+				<pre>
+//phase(180) produced by had() not() had()
+qc.reset(1);
+qc.write(1);
+setTimeout(() => {qc.had(); qc.not(); qc.had()},3000);
+				</pre>
+				</code>
+				<h4>Root of Not</h4>
+				<p>
+				had() phase(90) had() produces the root of Not</br>
+				running root of Not is same as not()
+				</p>
 
 
 	  
 				
   </body>
 </html>
+
