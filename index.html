@@ -239,8 +239,22 @@ setTimeout(() => {qc.had(); qc.not(); qc.had()},3000);
 				<h4>Root of Not</h4>
 				<p>
 				had() phase(90) had() produces the root of Not</br>
-				running root of Not is same as not()
+				running root of Not twice is same as not()
 				</p>
+				<code>
+					<pre>
+//init qbit
+qc.reset(1);
+//assign value
+qc.write(1);
+//apply root of not twice which is equivlent to not
+setTimeout(() => {qc.had(); qc.phase(90); qc.had();
+		setTimeout(() => {qc.had(); qc.phase(90); qc.had();}, 3000);
+}, 3000);
+
+					</pre>
+
+				</code>
 
 
 	  
